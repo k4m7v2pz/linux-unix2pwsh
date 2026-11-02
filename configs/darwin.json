@@ -1,0 +1,24 @@
+{
+  "$schema": "./darwin.schema.json",
+  "java": {
+    "home": "/Library/Java/JavaVirtualMachines/openjdk-25.jdk/Contents/Home",
+    "binPath": "/Library/Java/JavaVirtualMachines/openjdk-25.jdk/Contents/Home/bin"
+  },
+  "maven": {
+    "home": "/opt/apache-maven-3.9.6",
+    "binPath": "/opt/apache-maven-3.9.6/bin"
+  },
+  "nodejs": {
+    "nvmHome": "$HOME/.nvm",
+    "nodePath": "$HOME/.nvm/versions/node/v24.13.1",
+    "nodeExecutable": "$HOME/.nvm/versions/node/v24.13.1/bin/node",
+    "npmExecutable": "$HOME/.nvm/versions/node/v24.13.1/bin/npm",
+    "npxExecutable": "$HOME/.nvm/versions/node/v24.13.1/bin/npx"
+  },
+  "uv": {
+    "home": "$HOME/.local/bin"
+  },
+  "database": {
+    "password": null
+  }
+}

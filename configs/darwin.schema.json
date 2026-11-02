@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/tuas/linux-unix2pwsh/blob/main/configs/darwin.schema.json",
+  "title": "Darwin PowerShell Profile Configuration",
+  "description": "Configuration schema for Darwin (macOS) environment paths and settings in PowerShell profile",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to the JSON schema for validation",
+      "examples": ["./darwin.schema.json"]
+    },
+    "java": {
+      "type": "object",
+      "description": "Java Development Kit configuration",
+      "properties": {
+        "home": {
+          "type": "string",
+          "description": "JAVA_HOME path",
+          "examples": ["/Library/Java/JavaVirtualMachines/openjdk-25.jdk/Contents/Home"]
+        },
+        "binPath": {
+          "type": "string",
+          "description": "Java bin directory path",
+          "examples": ["/Library/Java/JavaVirtualMachines/openjdk-25.jdk/Contents/Home/bin"]
+        }
+      },
+      "required": ["home", "binPath"]
+    },
+    "maven": {
+      "type": "object",
+      "description": "Apache Maven configuration",
+      "properties": {
+        "home": {
+          "type": "string",
+          "description": "MAVEN_HOME path",
+          "examples": ["/opt/apache-maven-3.9.6"]
+        },
+        "binPath": {
+          "type": "string",
+          "description": "Maven bin directory path",
+          "examples": ["/opt/apache-maven-3.9.6/bin"]
+        }
+      },
+      "required": ["home", "binPath"]
+    },
+    "nodejs": {
+      "type": "object",
+      "description": "Node.js and npm configuration (nvm)",
+      "properties": {
+        "nvmHome": {
+          "type": "string",
+          "description": "nvm installation directory",
+          "examples": ["$HOME/.nvm"]
+        },
+        "nodePath": {
+          "type": "string",
+          "description": "Node.js installation path",
+          "examples": ["$HOME/.nvm/versions/node/v24.13.1"]
+        },
+        "nodeExecutable": {
+          "type": "string",
+          "description": "Full path to node executable",
+          "examples": ["$HOME/.nvm/versions/node/v24.13.1/bin/node"]
+        },
+        "npmExecutable": {
+          "type": "string",
+          "description": "Full path to npm executable",
+          "examples": ["$HOME/.nvm/versions/node/v24.13.1/bin/npm"]
+        },
+        "npxExecutable": {
+          "type": "string",
+          "description": "Full path to npx executable",
+          "examples": ["$HOME/.nvm/versions/node/v24.13.1/bin/npx"]
+        }
+      },
+      "required": [
+        "nvmHome",
+        "nodePath",
+        "nodeExecutable",
+        "npmExecutable",
+        "npxExecutable"
+      ]
+    },
+    "uv": {
+      "type": "object",
+      "description": "uv Python package manager configuration",
+      "properties": {
+        "home": {
+          "type": "string",
+          "description": "uv installation directory (supports $HOME variable)",
+          "examples": ["$HOME/.local/bin"]
+        }
+      },
+      "required": ["home"]
+    },
+    "database": {
+      "type": "object",
+      "description": "Database configuration",
+      "properties": {
+        "password": {
+          "type": ["string", "null"],
+          "description": "Database password (set to null if not used)",
+          "examples": ["your_password_here", null]
+        }
+      },
+      "required": ["password"]
+    }
+  },
+  "required": ["java", "maven", "nodejs", "uv", "database"],
+  "additionalProperties": false
+}

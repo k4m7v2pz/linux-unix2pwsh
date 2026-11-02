@@ -1,0 +1,13 @@
+.DS_Store
+
+# Test artifacts
+test-tree-find/
+temp-test-*/
+
+# PowerShell test output
+tests/output/
+*.log
+
+# Backup files
+*.bak
+*~

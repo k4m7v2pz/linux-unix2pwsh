@@ -1,0 +1,26 @@
+{
+  "$schema": "./windows.schema.json",
+  "java": {
+    "home": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot",
+    "binPath": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin"
+  },
+  "maven": {
+    "home": "C:\\Program Files\\Apache\\maven-3.9.6",
+    "binPath": "C:\\Program Files\\Apache\\maven-3.9.6\\bin"
+  },
+  "nodejs": {
+    "nvm4wHome": "C:\\nvm4w",
+    "nodePath": "C:\\nvm4w\\nodejs",
+    "nodeExecutable": "C:\\nvm4w\\nodejs\\node.exe",
+    "npmExecutable": "C:\\nvm4w\\nodejs\\npm.cmd",
+    "npmScript": "C:\\nvm4w\\nodejs\\npm.ps1",
+    "npxExecutable": "C:\\nvm4w\\nodejs\\npx.cmd",
+    "yarnExecutable": "C:\\nvm4w\\nodejs\\yarn.cmd"
+  },
+  "uv": {
+    "home": "%USERPROFILE%\\.local\\bin"
+  },
+  "database": {
+    "password": null
+  }
+}

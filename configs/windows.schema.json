@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/tuas/linux-unix2pwsh/blob/main/configs/windows.schema.json",
+  "title": "Windows PowerShell Profile Configuration",
+  "description": "Configuration schema for Windows environment paths and settings in PowerShell profile",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to the JSON schema for validation",
+      "examples": ["./windows.schema.json"]
+    },
+    "java": {
+      "type": "object",
+      "description": "Java Development Kit configuration",
+      "properties": {
+        "home": {
+          "type": "string",
+          "description": "JAVA_HOME path",
+          "examples": ["C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.2.10-hotspot"]
+        },
+        "binPath": {
+          "type": "string",
+          "description": "Java bin directory path",
+          "examples": ["C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.2.10-hotspot\\bin"]
+        }
+      },
+      "required": ["home", "binPath"]
+    },
+    "maven": {
+      "type": "object",
+      "description": "Apache Maven configuration",
+      "properties": {
+        "home": {
+          "type": "string",
+          "description": "MAVEN_HOME path",
+          "examples": ["C:\\Program Files\\Apache\\maven-3.9.6"]
+        },
+        "binPath": {
+          "type": "string",
+          "description": "Maven bin directory path",
+          "examples": ["C:\\Program Files\\Apache\\maven-3.9.6\\bin"]
+        }
+      },
+      "required": ["home", "binPath"]
+    },
+    "nodejs": {
+      "type": "object",
+      "description": "Node.js and npm configuration (nvm4w)",
+      "properties": {
+        "nvm4wHome": {
+          "type": "string",
+          "description": "nvm4w installation directory",
+          "examples": ["C:\\nvm4w"]
+        },
+        "nodePath": {
+          "type": "string",
+          "description": "Node.js installation path",
+          "examples": ["C:\\nvm4w\\nodejs"]
+        },
+        "nodeExecutable": {
+          "type": "string",
+          "description": "Full path to node.exe",
+          "examples": ["C:\\nvm4w\\nodejs\\node.exe"]
+        },
+        "npmExecutable": {
+          "type": "string",
+          "description": "Full path to npm.cmd",
+          "examples": ["C:\\nvm4w\\nodejs\\npm.cmd"]
+        },
+        "npmScript": {
+          "type": "string",
+          "description": "Full path to npm.ps1",
+          "examples": ["C:\\nvm4w\\nodejs\\npm.ps1"]
+        },
+        "npxExecutable": {
+          "type": "string",
+          "description": "Full path to npx.cmd",
+          "examples": ["C:\\nvm4w\\nodejs\\npx.cmd"]
+        },
+        "yarnExecutable": {
+          "type": "string",
+          "description": "Full path to yarn.cmd",
+          "examples": ["C:\\nvm4w\\nodejs\\yarn.cmd"]
+        }
+      },
+      "required": [
+        "nvm4wHome",
+        "nodePath",
+        "nodeExecutable",
+        "npmExecutable",
+        "npmScript",
+        "npxExecutable",
+        "yarnExecutable"
+      ]
+    },
+    "uv": {
+      "type": "object",
+      "description": "uv Python package manager configuration",
+      "properties": {
+        "home": {
+          "type": "string",
+          "description": "uv installation directory (supports %USERPROFILE% variable)",
+          "examples": ["%USERPROFILE%\\.local\\bin"]
+        }
+      },
+      "required": ["home"]
+    },
+    "database": {
+      "type": "object",
+      "description": "Database configuration",
+      "properties": {
+        "password": {
+          "type": ["string", "null"],
+          "description": "Database password (set to null if not used)",
+          "examples": ["your_password_here", null]
+        }
+      },
+      "required": ["password"]
+    }
+  },
+  "required": ["java", "maven", "nodejs", "uv", "database"],
+  "additionalProperties": false
+}

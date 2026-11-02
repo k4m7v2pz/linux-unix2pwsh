@@ -1,0 +1,24 @@
+{
+  "$schema": "./linux.schema.json",
+  "java": {
+    "home": "/usr/lib/jvm/default",
+    "binPath": "/usr/lib/jvm/default/bin"
+  },
+  "maven": {
+    "home": "/usr/share/maven",
+    "binPath": "/usr/share/maven/bin"
+  },
+  "nodejs": {
+    "nvmHome": "$HOME/.nvm",
+    "nodePath": "/usr/bin",
+    "nodeExecutable": "/usr/bin/node",
+    "npmExecutable": "/usr/bin/npm",
+    "npxExecutable": "/usr/bin/npx"
+  },
+  "uv": {
+    "home": "$HOME/.local/bin"
+  },
+  "database": {
+    "password": null
+  }
+}
